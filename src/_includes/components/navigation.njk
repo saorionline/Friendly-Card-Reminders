@@ -1,0 +1,27 @@
+ <nav class="main-navigation">
+  <div class="nav-container">
+    <ul class="nav-menu">
+      {% for item in navigation %}
+        <li class="nav-item">
+          <a href="{{ item.url }}" class="nav-link">{{ item.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  </nav>
+<div class="cover-logo">
+        <!-- Crystal/Prism logo mark with different geometric design -->
+        <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer crystal structure -->
+            <polygon points="24,2 42,12 42,36 24,46 6,36 6,12" stroke="#a855f7" stroke-width="1.2" fill="none"/>
+            <!-- Inner faceted design -->
+            <polygon points="24,8 35,16 35,32 24,40 13,32 13,16" stroke="#a855f7" stroke-width="0.8" fill="rgba(168,85,247,0.08)"/>
+            <!-- Central triangular elements -->
+            <polygon points="24,14 30,20 24,26 18,20" fill="#a855f7" opacity="0.6"/>
+            <polygon points="24,22 30,28 24,34 18,28" fill="#a855f7" opacity="0.4"/>
+            <!-- Top and bottom accent points -->
+            <circle cx="24" cy="10" r="1.5" fill="#a855f7" opacity="0.8"/>
+            <circle cx="24" cy="38" r="1.5" fill="#a855f7" opacity="0.8"/>
+        </svg>
+        <div class="logo-text">Crystal Prism Studio</div>
+    </div>

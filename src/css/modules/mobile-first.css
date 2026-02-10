@@ -1,0 +1,163 @@
+ /* Mobile-first CSS styles */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        
+        /* Mobile styles (base) */
+        .cover-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo-mark {
+            width: 64px;
+            height: 64px;
+            filter: drop-shadow(0 4px 12px rgba(168, 85, 247, 0.3));
+            transition: all 0.3s ease;
+        }
+        
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #a855f7;
+            text-shadow: 0 2px 8px rgba(168, 85, 247, 0.4);
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+        
+        /* Hover effects */
+        .cover-logo:hover .logo-mark {
+            transform: scale(1.05) rotate(5deg);
+            filter: drop-shadow(0 6px 20px rgba(168, 85, 247, 0.5));
+        }
+        
+        /* Animation */
+        .logo-mark {
+            animation: gentle-float 6s ease-in-out infinite;
+        }
+        
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        /* Tablet styles */
+        @media (min-width: 768px) {
+            .cover-logo {
+                flex-direction: row;
+                gap: 1.25rem;
+                padding: 2rem 2.5rem;
+                border-radius: 16px;
+            }
+            
+            .logo-mark {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .logo-text {
+                font-size: 1.4rem;
+                text-align: left;
+            }
+        }
+        
+        /* Desktop styles */
+        @media (min-width: 1024px) {
+            .cover-logo {
+                gap: 1.5rem;
+                padding: 2.5rem 3rem;
+                border-radius: 20px;
+            }
+            
+            .logo-mark {
+                width: 96px;
+                height: 96px;
+            }
+            
+            .logo-text {
+                font-size: 1.6rem;
+                font-weight: 700;
+            }
+        }
+        
+        /* Large desktop styles */
+        @media (min-width: 1440px) {
+            .cover-logo {
+                gap: 2rem;
+                padding: 3rem 4rem;
+            }
+            
+            .logo-mark {
+                width: 112px;
+                height: 112px;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .logo-mark {
+                filter: drop-shadow(0 4px 12px rgba(168, 85, 247, 0.4));
+            }
+        }
+        
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .logo-mark {
+                animation: none;
+                transition: none;
+            }
+            
+            .cover-logo:hover .logo-mark {
+                transform: none;
+            }
+        }
+        
+        /* Dark mode enhancement */
+        @media (prefers-color-scheme: dark) {
+            .cover-logo {
+                background: rgba(255, 255, 255, 0.03);
+                border-color: rgba(255, 255, 255, 0.15);
+            }
+        }
+        
+        /* Light mode alternative */
+        @media (prefers-color-scheme: light) {
+            body {
+                background: #f8fafc;
+            }
+            
+            .cover-logo {
+                background: rgba(0, 0, 0, 0.02);
+                border-color: rgba(0, 0, 0, 0.1);
+            }
+            
+            .logo-text {
+                color: #7c3aed;
+                text-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+            }
+        }

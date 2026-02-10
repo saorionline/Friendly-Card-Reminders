@@ -1,0 +1,104 @@
+.cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            width: 100%;
+}
+
+.card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+}
+
+.card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px var(--shadow-hover);
+}
+
+.card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green), var(--primary-orange));
+            border-radius: 20px 20px 0 0;
+}
+
+        /* Card 1 - Blue Theme (Overview) */
+.card-1 {
+            border-left: 4px solid var(--primary-blue);
+}
+
+.card-1 .card-icon {
+            background: linear-gradient(135deg, var(--primary-blue), #3b82f6);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+}
+
+        /* Card 2 - Green Theme (Calculation) */
+.card-2 {
+            border-left: 4px solid var(--primary-green);
+}
+
+.card-2 .card-icon {
+            background: linear-gradient(135deg, var(--primary-green), #10b981);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            animation: bounce 2s infinite;
+}
+
+        /* Card 3 - Orange Theme (Results) */
+.card-3 {
+            border-left: 4px solid var(--primary-orange);
+}
+
+.card-3 .card-icon {
+            background: linear-gradient(135deg, var(--primary-orange), #f97316);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            animation: rotate 3s linear infinite;
+}
+
+.card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+}
+
+.card-content {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+}
